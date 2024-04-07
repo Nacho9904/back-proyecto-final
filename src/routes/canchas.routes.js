@@ -13,7 +13,7 @@ router.post('/',
     check('name').notEmpty(),
     validateFields
 ], createCanchas)
-router.put('/', updateCanchas)
-router.delete('/', deleteCanchas )
+router.put('/:id', updateCanchas)
+router.delete('/:id', deleteCanchas )
 
 module.exports = router;

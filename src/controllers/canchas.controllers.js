@@ -6,7 +6,7 @@ const updateCanchas = async(req , res)=> {
     try {
      
      const {id} = req.params
-     const {precio, tipo, ...restBody} = req.body
+     const restBody = req.body
      console.log(restBody)
      const canchaUpdated = await CanchasSchema.findByIdAndUpdate(id, restBody, {new: true})
  
@@ -21,9 +21,9 @@ const updateCanchas = async(req , res)=> {
  
  /* DELETE */
  const deleteCanchas = async (req , res)=> {
-     const {id} = req.params
+     const { _id } = req.params
      try {
-          const cancha = await CanchasSchema.findById(id)
+          const cancha = await CanchasSchema.findById(_id)
  
           if (!cancha) {
              throw new Error('cancha not found')
@@ -51,7 +51,7 @@ const updateCanchas = async(req , res)=> {
  /* POST */
  const createCanchas  = async (req , res) => {
      try { 
-        const { body } = req;
+        const body = req;
 
     const cancha = new CanchasSchema(body) 
  

@@ -32,5 +32,5 @@ server.delete('/api/users', deleteUsers ) */
 
 
 server.listen(3002, () => {
-console.log('Servidor iniciado en http://localhost:3000')
+console.log('Servidor iniciado en http://localhost:3002')
 })

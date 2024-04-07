@@ -14,14 +14,16 @@ const CanchasSchema = Schema ({
         type:Number,
         require:true
     },
+    
+    
 })
 
-/* UserSchema.methods.toJSON = function () {
- const {__v, password, _id, ...user } = this.toObject()
- user.uid = _id;
- return user
-   } */
+ CanchasSchema.methods.toJSON = function () {
+ const { _id, ...canchas } = this.toObject()
+ canchas.uid = _id;
+ return canchas
+   } 
 
 
 
-module.exports = model('CanchasSchema',CanchasSchema)
+module.exports = model('canchas',CanchasSchema)
